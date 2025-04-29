@@ -453,10 +453,16 @@ gatekeeping this cuz i am dfs man
 
 ### Prim's Algorithm MST
 Greedy BFS
+Visit starting node and add it to the visited array. Take the shortest path from the nodes in the array that connect to nodes that aren't in the array. Repeat this process until all nodes are in visited. 
+Use Prim's for graphs with dense edges.
+O((E+V)logV)
 ### Kruskal's MST
 Sort everything, iterate through the list of edges, pick the smallest first and throw out anything that creates a cycle. 
 ### Djikstra's Algorithm
 greedy, only works on nonnegative, but more efficient
+Choose a starting node. Update all paths from that node. Next, visit the node that's the least distance away. Update all paths from that node. O(ElogV). Does not work for negative edge weights.
 ### Bellman-Ford
 if negative cycle, throw `false`.
+Choose arbitrary order for edges. Continue in this order, and update node distances. Once you hit an iteration that doesn't update anything, you're done. Works on negative edge weights.
+O(V*E)
 
